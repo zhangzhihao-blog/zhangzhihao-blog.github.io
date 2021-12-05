@@ -1,0 +1,611 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/1111.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="AwD-攻防模式Attack with Defense(AwD)全称攻防模式，在攻防模式CTF赛制中，参赛队伍连接到同一个网络空间。主办方会预先为每个参赛队分配要防守的主机，该主机称之为GameBox，每个队伍之间的GameBox配置及漏洞是完全一致的，选手需要防护自己的GameBox不被攻击的同时挖掘漏洞并攻击对手服务来得分。在AwD中主办方会运行一个名为Checker的程序定时检测选手的Gam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CTF比赛简介">
+<meta property="og:url" content="http://example.com/2021/12/02/CTF%E6%AF%94%E8%B5%9B%E7%AE%80%E4%BB%8B/index.html">
+<meta property="og:site_name" content="zzh的后花园">
+<meta property="og:description" content="AwD-攻防模式Attack with Defense(AwD)全称攻防模式，在攻防模式CTF赛制中，参赛队伍连接到同一个网络空间。主办方会预先为每个参赛队分配要防守的主机，该主机称之为GameBox，每个队伍之间的GameBox配置及漏洞是完全一致的，选手需要防护自己的GameBox不被攻击的同时挖掘漏洞并攻击对手服务来得分。在AwD中主办方会运行一个名为Checker的程序定时检测选手的Gam">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-02T09:52:06.000Z">
+<meta property="article:modified_time" content="2021-12-05T06:25:24.384Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="简介">
+<meta name="twitter:card" content="summary_large_image">
+  
+    - <link rel="stylesheet" href="/css/mouse.css">
+  
+  <title>CTF比赛简介 - zzh的后花园</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/scrollbar.css">
+<link rel="stylesheet" href="/css/indeximg-hover.css">
+<link rel="stylesheet" href="/css/macpanel.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":"flase","trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>zzh的后花园</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://rmt.dogedoge.com/fetch/fluid/storage/bg/dojm2h.png?w=1920&q=100&fmt=webp') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="CTF比赛简介">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-02 17:52" pubdate>
+        2021年12月2日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      7 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CTF比赛简介</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：4 小时前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="AwD-攻防模式"><a href="#AwD-攻防模式" class="headerlink" title="AwD-攻防模式"></a>AwD-攻防模式</h1><p>Attack with Defense(AwD)全称攻防模式，在攻防模式CTF赛制中，参赛队伍连接到同一个网络空间。主办方会预先为每个参赛队分配要防守的主机，该主机称之为GameBox，每个队伍之间的GameBox配置及漏洞是完全一致的，选手需要防护自己的GameBox不被攻击的同时挖掘漏洞并攻击对手服务来得分。在AwD中主办方会运行一个名为Checker的程序定时检测选手的GameBox的运行状态。若检测到状态不对则判定该GameBox宕机，按照规则扣除一定分数。攻防模式CTF赛制可以实时通过得分反映出比赛情况，最终也以得分直接分出胜负，是一种竞争激烈，具有很强观赏性和高度透明性的网络安全赛制。在这种赛制中，不仅仅是比参赛队员的智力和技术，也比体力（因为比赛一般都会持续24至48小时左右），同时也比团队之间的分工配合与合作。</p>
+<p>AwD通常仅包含Web及Pwn两种类型的题目。每个队伍可能会分到多个GameBox，随着比赛的进行，最早的GameBox可能会下线，同时会上线新的GameBox。</p>
+<h1 id="AWP-攻防增强"><a href="#AWP-攻防增强" class="headerlink" title="AWP-攻防增强"></a>AWP-攻防增强</h1><p>Attack Defense Plus(ADP)全称攻防增强模式，在该模式下中，参赛队伍连接到同一个网络空间。主办方会在平台上放置题目，选手需要登录到平台获得题目信息</p>
+<p>攻击模式下，平台会给出题目的访问链接，选手按照解题模式做题提交flag即可完成攻击，当完成攻击后， 每轮计算分数时均会计算该题目的攻击得分。</p>
+<p>防御模式下，选手需要自行挖掘题目的漏洞，并制作漏洞补丁包上传至平台，之后点击验证。验证时平台会新建一个完全干净的题目环境，使用预置的Exploit进行攻击，若攻击成功当验证通过之后（即已经完成修补），每轮计算分数均会认为该题目已防御。</p>
+<p>也就是说，对于每个题目，仅需要攻击成功一次，防御成功一次，该题就可以认为已完成，后续无需进行关注。</p>
+<p>ADP通常仅包含Web及Pwn两种类型的题目。随着比赛的进行，最早的题目可能会下线，后续也有可能会上线新的题目。</p>
+<p>ADP相较于AwD来说，选手无须编写批量攻击脚本，也无需关注题目的环境是否被攻击，是否服务异常等等，要做的只是攻击一次，防御一次，选手可以有更多的时间聚焦于还未完成的题目。从主办方的角度来说，大大减轻了比赛的硬件成本和运维成本。</p>
+<h1 id="RHG-自动化-AI自动化"><a href="#RHG-自动化-AI自动化" class="headerlink" title="RHG-自动化[ AI自动化]"></a>RHG-自动化[ AI自动化]</h1><p>Robo Hacking Game(RHG)该利用人工智能或是AI或是自动化攻击程序来全自动的挖掘并利用漏洞，考验选手对于漏洞理解以及工程化能力。比赛开始前(一般为1-4周左右)主办方会给出测试环境以及相关接口文档。选手需要编写自动化程序来请求接口获取题目相关信息，该类程序通常称之为bot，在程序中全自动访问并挖掘目标漏洞，完成利用漏洞攻击并获取flag的过程。获取到的flag也由程序自动化提交。RHG因为是由bot全自动进行工作，所以比赛开始即可视为结束。剩下的一切全看参赛选手编写的自动化bot的工作情况。</p>
+<p>比赛过程中不允许选手对bot进行任何的操作(包括debug/patch等等)。选手仅能看到自己的bot完成了哪些题。目前的得分情况等等。</p>
+<h1 id="RW-真实世界"><a href="#RW-真实世界" class="headerlink" title="RW-真实世界"></a>RW-真实世界</h1><p>Real World(RW) 首次于2018年长亭科技主办的RealWorldCTF中出现，该赛制着重考察选手在面对真实的环境下的漏洞挖掘与利用能力。通常RW模式出题也会围绕着能够应用于真实渗透攻击当中的漏洞，一般来说RW常见题型为VM/Docker逃逸、针对浏览器的攻击、针对IoT/Car等设备的攻击，Web类攻击等等 在RW赛制中会有一个Show Time，当选手认为自己已经可以完成题目时，选手可以在比赛平台上提交展示申请，由工作人员根据申请先后顺序进行展示排期。选手展示之前需要上台并连接相关网络，同时现场大屏会切换至目标的正常页面。选手确认连接并测试OK之后开始计时。一般情况下上台攻击的时间为5分钟，选手一旦完成攻击现场大屏幕会实时看到攻击的效果，此时裁判会根据效果是否符合题目要求来判定该题是否完成。如5在攻击时间内依然未能看到展示效果则认为本次攻击失败。现如今为了防止选手恶意排期。通常会有一个队伍总展示次数(例如在2019年数字经济云安全公测大赛中每个队伍只允许上台展示30次)，选手也需要尽可能保证上台之后攻击的成功率</p>
+<p>举个例子。题目要求需要攻击位于比赛网络中的某个网站并将首页替换为包含队伍名称的页面。题目给出该网站的一些信息(源代码/数据库等等)，选手经过本地挖掘漏洞之后，提交展示申请，排期到了之后进行上台展示。注意，因为RW模式是以展示效果来作为题目是否完成的准则，所以在RW模式中并不存在Flag。</p>
+<h1 id="KoH-抢占山头"><a href="#KoH-抢占山头" class="headerlink" title="KoH-抢占山头"></a>KoH-抢占山头</h1><p>King of Hill(KoH)是近些年新衍生的一种赛制。该赛制有点类似于AwD，但是又和AwD有些不一样。选手面对的是一个黑盒的目标，需要先挖掘漏洞并利用漏洞控制目标。将自己的队伍标识(队伍名称或是Token之类)写入到指定文件。随后在该主机上进行加固等操作防止其他队伍攻击，主办方会定期去检查标识文件，根据文件中的队伍标识来判定本回合分数给予哪个队伍。可以看出KoH也是一种对抗极为激烈的赛制，同时考察选手的渗透能力及防御加固能力。</p>
+<h1 id="Mix"><a href="#Mix" class="headerlink" title="Mix"></a>Mix</h1><p>混合模式结合了以上多种模式，现如今单一的赛制已经无法满足比赛及选手的参赛需求，所以大部分比赛会同时以多个模式进行比赛。例如参赛队伍通过解题(Jeopardy)可以获取一些初始分数，然后通过攻防对抗(AwD)进行得分增减的零和游戏，最终以得分高低分出胜负。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%80%E4%BB%8B/">简介</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    原文链接: <a target="_blank" href="https://zhangzhihao-blog.github.io" rel="nofollow noopener noopener">https://zhangzhihao-blog.github.io</a> <br/> 版权声明: 转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/12/05/hexo-d/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hexo d 错误</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/29/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'zhangzhihao-blog/commit-utterance');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+
+ <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+ <div>
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+var now = new Date();
+  function createtime(){
+	var start = new Date("2021/11/29 00:00:00");
+    now.setTime(now.getTime()+250);
+    days = (now - start) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);
+    hnum = Math.floor(hours);
+    if(String(hnum).length == 1 ){
+      hnum = "0" + hnum;
+    }
+    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+    mnum = Math.floor(minutes);
+    if(String(mnum).length == 1 ){
+      mnum = "0" + mnum;
+    }
+    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+    snum = Math.round(seconds);
+    if(String(snum).length == 1 ){
+      snum = "0" + snum;
+    }
+   document.getElementById("timeDate").innerHTML ="本站已各种夹缝中安全运行" +dnum+" 天 "; 
+   document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+  }
+
+   setInterval("createtime()",250);
+</script>
+</div>
+
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":"flase","trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?ed381d099240bc63b900aaffbb76d73b"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":300,"height":350},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
