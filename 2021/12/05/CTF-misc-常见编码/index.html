@@ -23,11 +23,13 @@
 <meta property="og:site_name" content="zzh的后花园">
 <meta property="og:description" content="常见CTF编码及加解密ASCLL简述：ASCII 码是对英语字符与二进制位之间的关系，做了统一规定。 基本的 ASCII 字符集共有 128 个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等， ​ 如：空格SPACE 是32（二进制：00100000）； ​ 数字0 是48(二进制：00110000)； ​ 大写字母A 是65（二进制：01000001）。 另外还有 32 个控">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/pig.png">
 <meta property="article:published_time" content="2021-12-05T06:38:46.000Z">
-<meta property="article:modified_time" content="2021-12-06T07:23:35.877Z">
+<meta property="article:modified_time" content="2021-12-06T07:49:16.347Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="编码查询">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/pig.png">
   
     - <link rel="stylesheet" href="/css/mouse.css">
   
@@ -216,7 +218,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7.4k 字
+      7.8k 字
     </span>
   
 
@@ -225,7 +227,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      23 分钟
+      24 分钟
     </span>
   
 
@@ -266,7 +268,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 分钟前
+                  本文最后更新于：1 分钟前
                 
               </p>
             
@@ -773,30 +775,18 @@
 <h3 id="在线工具"><a href="#在线工具" class="headerlink" title="在线工具:"></a>在线工具:</h3><p><a target="_blank" rel="noopener" href="https://www.keyfc.net/bbs/tools/tudoucode.aspx">与佛论禅</a></p>
 <h2 id="兽音译者"><a href="#兽音译者" class="headerlink" title="兽音译者"></a>兽音译者</h2><h3 id="特征-16"><a href="#特征-16" class="headerlink" title="特征:"></a>特征:</h3><p>~ 呜嗷嗷嗷嗷呜啊嗷啊 ~</p>
 <h3 id="举例-10"><a href="#举例-10" class="headerlink" title="举例:"></a>举例:</h3><figure class="highlight haml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs haml">hello world<br>~呜嗷嗷嗷嗷呜啊嗷啊~呜嗷呜呜~嗷~嗷啊嗷啊呜嗷嗷呜~~嗷~呜呜嗷啊~嗷嗷嗷呜啊嗷嗷啊呜嗷呜呜啊嗷呜~啊嗷啊呜嗷呜嗷啊~嗷~呜呜嗷~啊嗷嗷嗷呜啊呜呜呜呜嗷呜呜~嗷嗷~啊嗷啊呜嗷嗷~~啊<br></code></pre></div></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h3 id="在线解密-3"><a href="#在线解密-3" class="headerlink" title="在线解密:"></a>在线解密:</h3><p><a target="_blank" rel="noopener" href="https://roar.iiilab.com/">兽语在线解密</a></p>
+<h2 id="rabbit密码"><a href="#rabbit密码" class="headerlink" title="rabbit密码"></a>rabbit密码</h2><h3 id="举例-11"><a href="#举例-11" class="headerlink" title="举例:"></a>举例:</h3><figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">hello</span> world<br><span class="hljs-attribute">U2FsdGVkX1</span>/m<span class="hljs-number">3</span>oJAd<span class="hljs-number">3</span>oTJ<span class="hljs-number">1</span>WJCbsLcYvTxUNFug==<br><br></code></pre></div></td></tr></table></figure>
+<h3 id="在线解密-4"><a href="#在线解密-4" class="headerlink" title="在线解密:"></a>在线解密:</h3><p><a target="_blank" rel="noopener" href="https://www.sojson.com/encrypt_rabbit.html">rabbit密码解密</a></p>
+<h2 id="栅栏密码加密解密"><a href="#栅栏密码加密解密" class="headerlink" title="栅栏密码加密解密"></a>栅栏密码加密解密</h2><h3 id="特征-17"><a href="#特征-17" class="headerlink" title="特征:"></a>特征:</h3><p>栅栏密码是一种简单的移动字符位置的加密方法，规则简单，容易破解。栅栏密码的加密方式：把文本按照一定的字数分成多个组，取每组第一个字连起来得到密文1，再取每组第二个字连起来得到密文2……最后把密文1、密文2……连成整段密文.</p>
+<h3 id="举例-12"><a href="#举例-12" class="headerlink" title="举例:"></a>举例:</h3><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css">hello world<br>hlowrdel <span class="hljs-selector-tag">ol</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="在线解密-5"><a href="#在线解密-5" class="headerlink" title="在线解密:"></a>在线解密:</h3><p><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/zhalanmima.php">栅栏密码解密</a></p>
+<h2 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h2><h3 id="特征-18"><a href="#特征-18" class="headerlink" title="特征:"></a>特征:</h3><p>当铺密码为简单加密法，加密方式以汉字出头的笔画来计数<br>例：“由”字有一笔出头，则为1</p>
+<h3 id="举例-13"><a href="#举例-13" class="headerlink" title="举例:"></a>举例:</h3><figure class="highlight tap"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs tap">王夫 井工 夫口 由中人 井中 夫夫 由中大=67<span class="hljs-number"> 84 </span>70<span class="hljs-number"> 123 </span>82<span class="hljs-number"> 77 </span>125<br></code></pre></div></td></tr></table></figure>
+<p>转换出来的数字多用于十进制转ascII</p>
+<h3 id="在线解密-6"><a href="#在线解密-6" class="headerlink" title="在线解密:"></a>在线解密:</h3><p><a target="_blank" rel="noopener" href="https://dsb.ink/ctf/dangpu.html">当铺密码</a></p>
+<h2 id="猪圈密码"><a href="#猪圈密码" class="headerlink" title="猪圈密码:"></a>猪圈密码:</h2><h3 id="特征-19"><a href="#特征-19" class="headerlink" title="特征:"></a>特征:</h3><p>由以下符号组成:<br><img src="/img/pig.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="在线解密-7"><a href="#在线解密-7" class="headerlink" title="在线解密"></a>在线解密</h3><p><a target="_blank" rel="noopener" href="http://www.metools.info/code/c90.html">猪圈密码在线解密</a></p>
 
             </div>
             <hr>
