@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>蓝桥杯基础练习</title>
+    <link href="/2022/01/25/%E8%93%9D%E6%A1%A5%E6%9D%AF/"/>
+    <url>/2022/01/25/%E8%93%9D%E6%A1%A5%E6%9D%AF/</url>
+    
+    <content type="html"><![CDATA[<h1 id="A-B问题"><a href="#A-B问题" class="headerlink" title="A+B问题"></a>A+B问题</h1><p>问题描述:<br>输入A、B，输出A+B。</p><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>&#123;<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String []args)</span></span><br><span class="hljs-function"></span>&#123;Scanner sc=<span class="hljs-keyword">new</span> Scanner(System.in);<br> Integer a=sc.nextInt();<br> Integer b=sc.nextInt();<br> System.out.println(a+b);<br>&#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>蓝桥杯</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>蓝桥杯java组</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>攻防世界新手练习村</title>
     <link href="/2021/12/06/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0%E6%9D%91/"/>
     <url>/2021/12/06/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0%E6%9D%91/</url>
