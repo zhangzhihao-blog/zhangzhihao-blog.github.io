@@ -1,0 +1,644 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/1111.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="金三胖题解：看到动图，想到stegsolve，用Frame Browser逐帖分析，得到flag。 1flag&amp;#123;he11o hongke&amp;#125; 二维码题解：用二维码解码器解码得到 secret is here，提交上去，发现flag错误，看来这不是flag，根据流程，先参看图片属性，并没有什么内容，再用010edit，也没有什么信息，用stegsolve，也没发现，最后用VMwar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BUUCTF练习">
+<meta property="og:url" content="http://example.com/2022/02/27/BUUCTF%E7%BB%83%E4%B9%A0/index.html">
+<meta property="og:site_name" content="zzh的后花园">
+<meta property="og:description" content="金三胖题解：看到动图，想到stegsolve，用Frame Browser逐帖分析，得到flag。 1flag&amp;#123;he11o hongke&amp;#125; 二维码题解：用二维码解码器解码得到 secret is here，提交上去，发现flag错误，看来这不是flag，根据流程，先参看图片属性，并没有什么内容，再用010edit，也没有什么信息，用stegsolve，也没发现，最后用VMwar">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/%E4%BA%8C%E7%BB%B4%E7%A0%81.png">
+<meta property="og:image" content="http://example.com/img/%E5%A4%A7%E7%99%BD.png">
+<meta property="og:image" content="http://example.com/img/dabai.png">
+<meta property="og:image" content="http://example.com/img/LSB.png">
+<meta property="og:image" content="http://example.com/img/LSB1.png">
+<meta property="og:image" content="http://example.com/img/%E4%BC%AA%E5%8A%A0%E5%AF%86.png">
+<meta property="article:published_time" content="2022-02-27T07:57:23.000Z">
+<meta property="article:modified_time" content="2022-02-28T08:57:37.504Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BUUCTF">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/%E4%BA%8C%E7%BB%B4%E7%A0%81.png">
+  
+    - <link rel="stylesheet" href="/css/mouse.css">
+  
+  <title>BUUCTF练习 - zzh的后花园</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/scrollbar.css">
+<link rel="stylesheet" href="/css/indeximg-hover.css">
+<link rel="stylesheet" href="/css/macpanel.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":"flase","trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"OwmXMu5ulbL9tc2LDoOSm88V-gzGzoHsz","app_key":"bqWoRfDVxvyAH6VGIr9jdKOR","server_url":"","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>zzh的后花园</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://rmt.dogedoge.com/fetch/fluid/storage/bg/dojm2h.png?w=1920&q=100&fmt=webp') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="BUUCTF练习">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-27 15:57" pubdate>
+        2022年2月27日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      8 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">BUUCTF练习</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：1 分钟前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="金三胖"><a href="#金三胖" class="headerlink" title="金三胖"></a>金三胖</h2><h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p><strong>看到动图，想到stegsolve，用Frame Browser逐帖分析，得到flag。</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;he<span class="hljs-number">11</span>o hongke&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="二维码"><a href="#二维码" class="headerlink" title="二维码"></a>二维码</h2><h3 id="题解：-1"><a href="#题解：-1" class="headerlink" title="题解："></a>题解：</h3><p><strong>用二维码解码器解码得到 secret is here，提交上去，<br>发现flag错误，看来这不是flag，根据流程，先参看图片属性，<br>并没有什么内容，再用010edit，也没有什么信息，用stegsolve，<br>也没发现，最后用VMware，binwalk分离，得到一个ZIP压缩包，<br>打开发现4num，密码应该是4位数的数字，用暴力破解，得到密码为：7639 ，打开得到flag。</strong></p>
+<figure class="highlight dust"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dust"><span class="xml">CTF</span><span class="hljs-template-variable">&#123;vjpw_wnoei&#125;</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="你竟然赶我走"><a href="#你竟然赶我走" class="headerlink" title="你竟然赶我走"></a>你竟然赶我走</h2><h3 id="题解：-2"><a href="#题解：-2" class="headerlink" title="题解："></a>题解：</h3><p><strong>打开查看属性，没什么有用的信息，用notepad++打开，搜索flag，得到flag。</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;stego_is_s<span class="hljs-number">0</span>_bor<span class="hljs-number">1</span>ing&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="N种方法解决"><a href="#N种方法解决" class="headerlink" title="N种方法解决"></a>N种方法解决</h2><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>** 下载发现是exe的文件，无法打开，用010editor打开，发现是一串base64的编码组成的图片，用图片base64解码得到一张图片，扫描二维码得到flag。**<br><img src="/img/%E4%BA%8C%E7%BB%B4%E7%A0%81.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">KEY</span>&#123;dca<span class="hljs-number">57</span>f<span class="hljs-number">966</span>e<span class="hljs-number">4</span>e<span class="hljs-number">4</span>e<span class="hljs-number">31</span>fd<span class="hljs-number">5</span>b<span class="hljs-number">15417</span>da<span class="hljs-number">63269</span>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="大白"><a href="#大白" class="headerlink" title="大白"></a>大白</h2><h3 id="题解：-3"><a href="#题解：-3" class="headerlink" title="题解："></a>题解：</h3><p><strong>由提示可知，需要修改图片的高度，用010editor打开，在网上查询宽度和高度的位置，这两个位置调大一点。</strong><br><img src="/img/%E5%A4%A7%E7%99%BD.png" srcset="/img/loading.gif" lazyload><br>得到flag<br><img src="/img/dabai.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;He<span class="hljs-number">1</span>|<span class="hljs-number">0</span>_d<span class="hljs-number">4</span>_ba<span class="hljs-number">1</span>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="基础破解"><a href="#基础破解" class="headerlink" title="基础破解"></a>基础破解</h2><h3 id="题解：-4"><a href="#题解：-4" class="headerlink" title="题解："></a>题解：</h3><p><strong>由提示可知，这是个4位数字组成的密码，用ARCHPR直接破解，得到密码<br>2563 ，解压文件得到一个base64的编码，解码得到flag。</strong></p>
+<figure class="highlight gcode"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gcode">打开文件得到的base<span class="hljs-number">64</span><br>ZmxhZ<span class="hljs-number">3</span>s<span class="hljs-number">3</span>MD<span class="hljs-name">M1</span><span class="hljs-symbol">NDMwMGE1</span>MTAwYmE<span class="hljs-number">3</span>ODA<span class="hljs-number">2</span>ODgw<span class="hljs-symbol">NTY2</span>MWI<span class="hljs-number">5</span><span class="hljs-name">M2</span>E<span class="hljs-number">1</span>Y<span class="hljs-number">30</span>=<br>解码得：<br>flag&#123;<span class="hljs-number">70354300</span>a<span class="hljs-number">5100</span>ba<span class="hljs-number">78068805661</span>b<span class="hljs-number">93</span>a<span class="hljs-number">5</span>c&#125;<br><br></code></pre></div></td></tr></table></figure>
+<h2 id="乌镇峰会种图"><a href="#乌镇峰会种图" class="headerlink" title="乌镇峰会种图"></a>乌镇峰会种图</h2><h3 id="题解：-5"><a href="#题解：-5" class="headerlink" title="题解："></a>题解：</h3><p><strong>下载文件得到一个图片，用notepad++打开，搜索flag，得到flag在最后一行。</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;<span class="hljs-number">97314</span>e<span class="hljs-number">7864</span>a<span class="hljs-number">8</span>f<span class="hljs-number">62627</span>b<span class="hljs-number">26</span>f<span class="hljs-number">3</span>f<span class="hljs-number">998</span>c<span class="hljs-number">37</span>f<span class="hljs-number">1</span>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="文件中的秘密"><a href="#文件中的秘密" class="headerlink" title="文件中的秘密"></a>文件中的秘密</h2><h3 id="题解：-6"><a href="#题解：-6" class="headerlink" title="题解："></a>题解：</h3><p><strong>下载得到一张图片，查看图片信息，在备注中得到flag。</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;<span class="hljs-number">870</span>c<span class="hljs-number">5</span>a<span class="hljs-number">72806115</span>cb<span class="hljs-number">5439345</span>d<span class="hljs-number">8</span>b<span class="hljs-number">014396</span>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="wireshark"><a href="#wireshark" class="headerlink" title="wireshark"></a>wireshark</h2><h3 id="题解：-7"><a href="#题解：-7" class="headerlink" title="题解："></a>题解：</h3><p><strong>由名字可得，这是一个流量分析题，用wireshark工具，管理员密码一般用POST请求，查找http.request.method==POST，追踪TCP流，得到flag。</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;ffb<span class="hljs-number">7567</span>a<span class="hljs-number">1</span>d<span class="hljs-number">4</span>f<span class="hljs-number">4</span>abdffdb<span class="hljs-number">54</span>e<span class="hljs-number">022</span>f<span class="hljs-number">8</span>facd&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="LSB"><a href="#LSB" class="headerlink" title="LSB"></a>LSB</h2><h3 id="题解：-8"><a href="#题解：-8" class="headerlink" title="题解："></a>题解：</h3><p><strong>由题目可知，这是LSB隐写，用stegsolve打开，选通道0，发现是一张PNG图片，储存得到二维码，扫描得到flag</strong><br><img src="/img/LSB.png" srcset="/img/loading.gif" lazyload><br><img src="/img/LSB1.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight dust"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dust"><span class="xml">解码得到cumtctf</span><span class="hljs-template-variable">&#123;1sb_i4_s0_Ea4y&#125;</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="RAR"><a href="#RAR" class="headerlink" title="RAR"></a>RAR</h2><h3 id="题解：-9"><a href="#题解：-9" class="headerlink" title="题解："></a>题解：</h3><p><strong>由提示可知，直接用archpr破解，得到4位数密码8795，输入打开文件得到flag</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;<span class="hljs-number">1773</span>c<span class="hljs-number">5</span>da<span class="hljs-number">790</span>bd<span class="hljs-number">3</span>caff<span class="hljs-number">38</span>e<span class="hljs-number">3</span>decd<span class="hljs-number">180</span>eb<span class="hljs-number">7</span>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="zip伪加密"><a href="#zip伪加密" class="headerlink" title="zip伪加密"></a>zip伪加密</h2><h3 id="题解：-10"><a href="#题解：-10" class="headerlink" title="题解："></a>题解：</h3><p><strong>由名字可知，这是伪加密，查询伪加密的知识点，把09 改为00，打开文件得到flag</strong><br><img src="/img/%E4%BC%AA%E5%8A%A0%E5%AF%86.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;Adm<span class="hljs-number">1</span>N-B<span class="hljs-number">2</span>G-kU-SZIP&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="qr"><a href="#qr" class="headerlink" title="qr"></a>qr</h2><h3 id="题解：-11"><a href="#题解：-11" class="headerlink" title="题解："></a>题解：</h3><p><strong>下载得到一张二维码，扫描得到flag</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">Flag</span>&#123;<span class="hljs-number">878865</span>ce<span class="hljs-number">73370</span>a<span class="hljs-number">4</span>ce<span class="hljs-number">607</span>d<span class="hljs-number">21</span>ca<span class="hljs-number">01</span>b<span class="hljs-number">5</span>e<span class="hljs-number">59</span>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="被嗅探的流量"><a href="#被嗅探的流量" class="headerlink" title="被嗅探的流量"></a>被嗅探的流量</h2><h3 id="题解：-12"><a href="#题解：-12" class="headerlink" title="题解："></a>题解：</h3><p>** 传输数据一般用POST，直接搜索 http.request.method==POST，追踪TCP流，查询flag，得到flag**</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;da<span class="hljs-number">73</span>d<span class="hljs-number">88936010</span>da<span class="hljs-number">1</span>eeeb<span class="hljs-number">36</span>e<span class="hljs-number">945</span>ec<span class="hljs-number">4</span>b<span class="hljs-number">97</span>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="镜子里面的世界"><a href="#镜子里面的世界" class="headerlink" title="镜子里面的世界"></a>镜子里面的世界</h2><h3 id="题解：-13"><a href="#题解：-13" class="headerlink" title="题解："></a>题解：</h3><p><strong>用stegsolve打开，通道都选0，得到flag</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;st<span class="hljs-number">3</span>g<span class="hljs-number">0</span>_ saurus_wr<span class="hljs-number">3</span>cks&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="ningen"><a href="#ningen" class="headerlink" title="ningen"></a>ningen</h2><h3 id="题解：-14"><a href="#题解：-14" class="headerlink" title="题解："></a>题解：</h3><p><strong>下载给一张图片，却提示有4位数密码，想到里面应该隐藏的有文件，用VMware分离文件，得到一个文件，里面有一个压缩包，需要密码，用archpr得到密码8368，打开得到flag</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;b<span class="hljs-number">025</span>fc<span class="hljs-number">9</span>ca<span class="hljs-number">797</span>a<span class="hljs-number">67</span>d<span class="hljs-number">2103</span>bfbc<span class="hljs-number">407</span>a<span class="hljs-number">6</span>d<span class="hljs-number">5</span>f&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="小明的保险箱"><a href="#小明的保险箱" class="headerlink" title="小明的保险箱"></a>小明的保险箱</h2><h3 id="题解：-15"><a href="#题解：-15" class="headerlink" title="题解："></a>题解：</h3><p><strong>由题目可知，里面有隐藏的文件，用VMWare中的binwalk分离，得到一个压缩包再用archpr破解密码 7869，得到flag</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;<span class="hljs-number">75</span>a<span class="hljs-number">3</span>d<span class="hljs-number">68</span>bf<span class="hljs-number">071</span>ee<span class="hljs-number">188</span>c<span class="hljs-number">418</span>ea<span class="hljs-number">6</span>cf<span class="hljs-number">0</span>bb<span class="hljs-number">043</span>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="爱因斯坦"><a href="#爱因斯坦" class="headerlink" title="爱因斯坦"></a>爱因斯坦</h2><h3 id="题解：-16"><a href="#题解：-16" class="headerlink" title="题解："></a>题解：</h3><p><strong>查看属性，详细信息，备注中有个 this_is_not_password ，这应该是个钥匙，那就要有文件，用VMWare binwalk分离，打开文件，输入密码得到flag</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;dd<span class="hljs-number">22</span>a<span class="hljs-number">92</span>bf<span class="hljs-number">2</span>cceb<span class="hljs-number">6</span>c<span class="hljs-number">0</span>cd<span class="hljs-number">0</span>d<span class="hljs-number">6</span>b<span class="hljs-number">83</span>ff<span class="hljs-number">51606</span>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="easycap"><a href="#easycap" class="headerlink" title="easycap"></a>easycap</h2><h3 id="题解：-17"><a href="#题解：-17" class="headerlink" title="题解："></a>题解：</h3><p><strong>根据文件格式可知，这是一个文件分析题，用wireshark打开，直接追踪TCP流，打开得到flag</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">FLAG</span>:<span class="hljs-number">385</span>b<span class="hljs-number">87</span>afc<span class="hljs-number">8671</span>dee<span class="hljs-number">07550290</span>d<span class="hljs-number">16</span>a<span class="hljs-number">8071</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="隐藏的钥匙"><a href="#隐藏的钥匙" class="headerlink" title="隐藏的钥匙"></a>隐藏的钥匙</h2><h3 id="题解：-18"><a href="#题解：-18" class="headerlink" title="题解："></a>题解：</h3><p><strong>用notepad++打开，搜索flag，得到一个base64编码的flag，base解码，得到flag</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;<span class="hljs-number">377</span>cbadda<span class="hljs-number">1</span>eca<span class="hljs-number">2</span>f<span class="hljs-number">2</span>f<span class="hljs-number">73</span>d<span class="hljs-number">36277781</span>f<span class="hljs-number">00</span>a&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="另外一个世界"><a href="#另外一个世界" class="headerlink" title="另外一个世界"></a>另外一个世界</h2><h3 id="题解：-19"><a href="#题解：-19" class="headerlink" title="题解："></a>题解：</h3><p><strong>用notepad++打开，拉到最后一行，看到01组成的数字，用二进制转换为16进制，得到flag</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;koekj<span class="hljs-number">3</span>s&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="神秘龙卷风"><a href="#神秘龙卷风" class="headerlink" title="神秘龙卷风"></a>神秘龙卷风</h2><h3 id="题解：-20"><a href="#题解：-20" class="headerlink" title="题解："></a>题解：</h3><p><strong>由提示可知，该文件密码为4位数的密码，用archpr破解，得到密码 5463，打开文件，为+&gt;.组成的字符串，查询编码可知，该编码为brainfuck编码，解码得到flag</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;e<span class="hljs-number">4</span>bbef<span class="hljs-number">8</span>bdf<span class="hljs-number">9743</span>f<span class="hljs-number">8</span>bf<span class="hljs-number">5</span>b<span class="hljs-number">727</span>a<span class="hljs-number">9</span>f<span class="hljs-number">6332</span>a<span class="hljs-number">8</span>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF-Misc/">CTF-Misc</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/BUUCTF/">BUUCTF</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    原文链接: <a target="_blank" href="https://zhangzhihao-blog.github.io" rel="nofollow noopener noopener">https://zhangzhihao-blog.github.io</a> <br/> 版权声明: 转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/01/25/%E8%93%9D%E6%A1%A5%E6%9D%AF/">
+                        <span class="hidden-mobile">蓝桥杯基础练习</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"OwmXMu5ulbL9tc2LDoOSm88V-gzGzoHsz","appKey":"bqWoRfDVxvyAH6VGIr9jdKOR","path":"window.location.pathname","placeholder":"吐糟","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+
+ <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+ <div>
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+var now = new Date();
+  function createtime(){
+	var start = new Date("2021/11/29 00:00:00");
+    now.setTime(now.getTime()+250);
+    days = (now - start) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);
+    hnum = Math.floor(hours);
+    if(String(hnum).length == 1 ){
+      hnum = "0" + hnum;
+    }
+    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+    mnum = Math.floor(minutes);
+    if(String(mnum).length == 1 ){
+      mnum = "0" + mnum;
+    }
+    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+    snum = Math.round(seconds);
+    if(String(snum).length == 1 ){
+      snum = "0" + snum;
+    }
+   document.getElementById("timeDate").innerHTML ="小破站已各种夹缝中安全运行" +dnum+" 天 "; 
+   document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+  }
+
+   setInterval("createtime()",250);
+</script>
+</div>
+
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":"flase","trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?ed381d099240bc63b900aaffbb76d73b"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":300,"height":350},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
