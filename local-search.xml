@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>伪加密</title>
+    <link href="/2022/02/28/%E4%BC%AA%E5%8A%A0%E5%AF%86/"/>
+    <url>/2022/02/28/%E4%BC%AA%E5%8A%A0%E5%AF%86/</url>
+    
+    <content type="html"><![CDATA[<h1 id="伪加密"><a href="#伪加密" class="headerlink" title="伪加密"></a>伪加密</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><strong>zip伪加密是在文件头的加密标志位做修改，进而再打开文件时识被别为加密压缩包。</strong></p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><strong>一个 ZIP 文件由三个部分组成：<br>压缩源文件数据区+压缩源文件目录区+压缩源文件目录结束标志。</strong></p><h3 id="压缩源文件数据区："><a href="#压缩源文件数据区：" class="headerlink" title="压缩源文件数据区："></a>压缩源文件数据区：</h3><p><strong>50 4B 03 04：这是头文件标记（0x04034b50）<br>14 00：解压文件所需 pkware 版本<br>00 00：全局方式位标记（有无加密）<br>08 00：压缩方式<br>5A 7E：最后修改文件时间<br>F7 46：最后修改文件日期<br>16 B5 80 14：CRC-32校验（1480B516）<br>19 00 00 00：压缩后尺寸（25）<br>17 00 00 00：未压缩尺寸（23）<br>07 00：文件名长度<br>00 00：扩展记录长度</strong></p><h3 id="压缩源文件目录区："><a href="#压缩源文件目录区：" class="headerlink" title="压缩源文件目录区："></a>压缩源文件目录区：</h3><p><strong>50 4B 01 02：目录中文件文件头标记(0x02014b50)<br>3F 00：压缩使用的 pkware 版本<br>14 00：解压文件所需 pkware 版本<br>00 00：全局方式位标记（有无加密，这个更改这里进行伪加密，改为09 00打开就会提示有密码了）<br>08 00：压缩方式<br>5A 7E：最后修改文件时间<br>F7 46：最后修改文件日期<br>16 B5 80 14：CRC-32校验（1480B516）<br>19 00 00 00：压缩后尺寸（25）<br>17 00 00 00：未压缩尺寸（23）<br>07 00：文件名长度<br>24 00：扩展字段长度<br>00 00：文件注释长度<br>00 00：磁盘开始号<br>00 00：内部文件属性<br>20 00 00 00：外部文件属性<br>00 00 00 00：局部头部偏移量</strong></p><h3 id="压缩源文件目录结束标志："><a href="#压缩源文件目录结束标志：" class="headerlink" title="压缩源文件目录结束标志："></a>压缩源文件目录结束标志：</h3><p><strong>50 4B 05 06：目录结束标记<br>00 00：当前磁盘编号<br>00 00：目录区开始磁盘编号<br>01 00：本磁盘上纪录总数<br>01 00：目录区中纪录总数<br>59 00 00 00：目录区尺寸大小<br>3E 00 00 00：目录区对第一张磁盘的偏移量<br>00 00：ZIP 文件注释长度</strong></p><h2 id="识别真假加密"><a href="#识别真假加密" class="headerlink" title="识别真假加密"></a>识别真假加密</h2><h3 id="无加密"><a href="#无加密" class="headerlink" title="无加密"></a>无加密</h3><p><strong>压缩源文件数据区的全局加密应当为00 00<br>且压缩源文件目录区的全局方式位标记应当为00 00</strong></p><h3 id="假加密"><a href="#假加密" class="headerlink" title="假加密"></a>假加密</h3><p><strong>压缩源文件数据区的全局加密应当为00 00<br>且压缩源文件目录区的全局方式位标记应当为09 00</strong></p><h3 id="真加密"><a href="#真加密" class="headerlink" title="真加密"></a>真加密</h3><p><strong>压缩源文件数据区的全局加密应当为09 00<br>且压缩源文件目录区的全局方式位标记应当为09 00</strong></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>CTF-Misc</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>知识点</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>BUUCTF练习</title>
     <link href="/2022/02/27/BUUCTF%E7%BB%83%E4%B9%A0/"/>
     <url>/2022/02/27/BUUCTF%E7%BB%83%E4%B9%A0/</url>
