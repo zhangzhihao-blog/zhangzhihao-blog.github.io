@@ -7,16 +7,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/1111.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta property="og:type" content="website">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="zzh的后花园">
 <meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="zzh的后花园">
@@ -24,26 +24,39 @@
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
     - <link rel="stylesheet" href="/css/mouse.css">
   
   <title>zzh的后花园</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/scrollbar.css">
@@ -54,16 +67,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":"flase","trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"OwmXMu5ulbL9tc2LDoOSm88V-gzGzoHsz","app_key":"bqWoRfDVxvyAH6VGIr9jdKOR","server_url":"","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
+
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>zzh的后花园</strong>
@@ -157,6 +183,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -169,34 +196,40 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://rmt.dogedoge.com/fetch/fluid/storage/bg/dojm2h.png?w=1920&q=100&fmt=webp') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Welcome to Zhang Zhi hao&#39;s blog.">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="花有重开日，人无再少年。"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
@@ -215,20 +248,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/12/05/CTF-misc-%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/" target="_self">
+      <a class="index-excerpt" href="/2021/12/05/CTF-misc-%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/" target="_self">
+        <div>
           
-          
-            
-          
-          常见CTF编码及加解密ASCLL简述：ASCII 码是对英语字符与二进制位之间的关系，做了统一规定。
-基本的 ASCII 字符集共有 128 个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等，
-​ 如：空格SPACE 是32（二进制：00100000）；
-​ 数字0 是48(二进制：00110000)；
-​ 大写字母A 是65（二进制：01000001）。
-另外还有 32 个控
-        </a>
-      </p>
+          常见CTF编码及加解密ASCLL简述：ASCII 码是对英语字符与二进制位之间的关系，做了统一规定。 基本的 ASCII 字符集共有 128 个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等， ​ 如：空格SPACE 是32（二进制：00100000）； ​ 数字0 是48(二进制：00110000)； ​ 大写字母A 是65（二进制：01000001）。 另外还有 32 个控
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -240,18 +265,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CTF-Misc/">CTF-Misc</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CTF-Misc/" class="category-chain-item">CTF-Misc</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%BC%96%E7%A0%81%E6%9F%A5%E8%AF%A2/">编码查询</a>
+              <a href="/tags/%E7%BC%96%E7%A0%81%E6%9F%A5%E8%AF%A2/">#编码查询</a>
             
           </div>
         
@@ -270,26 +309,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/12/05/CTF-misc%E7%AE%80%E4%BB%8B/" target="_self">
+      <a class="index-excerpt" href="/2021/12/05/CTF-misc%E7%AE%80%E4%BB%8B/" target="_self">
+        <div>
           
-          
-            
-          
-          Misc 简介Misc 是英文 Miscellaneous 的前四个字母，杂项、混合体、大杂烩的意思。
-Misc 在国外的比赛中其实又被具体划分为各个小块，有
-
-Recon
-Forensic
-Stego
-Misc
-……在国内的比赛中，被统一划分入 Misc 领域，有时 Crypto（尤其是古典密码）也被划入其中。
-
-在 Misc 这一章节中，将从以下几个方面介绍这一块的知识：
-
-Recon（信息搜
-        </a>
-      </p>
+          Misc 简介Misc 是英文 Miscellaneous 的前四个字母，杂项、混合体、大杂烩的意思。 Misc 在国外的比赛中其实又被具体划分为各个小块，有  Recon Forensic Stego Misc ……在国内的比赛中，被统一划分入 Misc 领域，有时 Crypto（尤其是古典密码）也被划入其中。  在 Misc 这一章节中，将从以下几个方面介绍这一块的知识：  Recon（信息搜
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -301,18 +326,32 @@ Recon（信息搜
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CTF-Misc/">CTF-Misc</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CTF-Misc/" class="category-chain-item">CTF-Misc</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%AE%80%E4%BB%8B/">简介</a>
+              <a href="/tags/%E7%AE%80%E4%BB%8B/">#简介</a>
             
           </div>
         
@@ -331,16 +370,12 @@ Recon（信息搜
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/12/05/hexo-d/" target="_self">
+      <a class="index-excerpt" href="/2021/12/05/hexo-d/" target="_self">
+        <div>
           
-          
-            
-          
-          解决方式一：12345678#删除git提交内容文件夹rm -rf .deploy_git/#执行git config --global core.autocrlf false#最后hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
-解决方式二：有可能是你的git repo配置地址不正确,可以将http方式变更为ssh方式12345678910111213
-        </a>
-      </p>
+          解决方式一：12345678#删除git提交内容文件夹rm -rf .deploy_git&#x2F;#执行git config --global core.autocrlf false#最后hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 解决方式二：有可能是你的git repo配置地址不正确,可以将http方式变更为ssh方式12345678910111213
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -356,7 +391,7 @@ Recon（信息搜
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/">常见错误</a>
+              <a href="/tags/%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/">#常见错误</a>
             
           </div>
         
@@ -375,15 +410,12 @@ Recon（信息搜
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/12/02/CTF%E6%AF%94%E8%B5%9B%E7%AE%80%E4%BB%8B/" target="_self">
-          
-          
-            
+      <a class="index-excerpt" href="/2021/12/02/CTF%E6%AF%94%E8%B5%9B%E7%AE%80%E4%BB%8B/" target="_self">
+        <div>
           
           AwD-攻防模式Attack with Defense(AwD)全称攻防模式，在攻防模式CTF赛制中，参赛队伍连接到同一个网络空间。主办方会预先为每个参赛队分配要防守的主机，该主机称之为GameBox，每个队伍之间的GameBox配置及漏洞是完全一致的，选手需要防护自己的GameBox不被攻击的同时挖掘漏洞并攻击对手服务来得分。在AwD中主办方会运行一个名为Checker的程序定时检测选手的Gam
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -395,18 +427,32 @@ Recon（信息搜
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CTF/">CTF</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CTF/" class="category-chain-item">CTF</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%AE%80%E4%BB%8B/">简介</a>
+              <a href="/tags/%E7%AE%80%E4%BB%8B/">#简介</a>
             
           </div>
         
@@ -425,16 +471,12 @@ Recon（信息搜
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/11/29/hello-world/" target="_self">
+      <a class="index-excerpt" href="/2021/11/29/hello-world/" target="_self">
+        <div>
           
-          
-            
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-        </a>
-      </p>
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -488,99 +530,64 @@ Quick
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- LeanCloud 统计PV -->
-        <span id="leancloud-site-pv-container" style="display: none">
-            总访问量 
-            <span id="leancloud-site-pv"></span>
-             次
-          </span>
-      
-      
-        <!-- LeanCloud 统计UV -->
-        <span id="leancloud-site-uv-container" style="display: none">
-            总访客数 
-            <span id="leancloud-site-uv"></span>
-             人
-          </span>
-      
-
-    
-  </div>
-
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
   
 
   
-
- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
- <div>
-<span id="timeDate">载入天数...</span>
-<span id="times">载入时分秒...</span>
-<script>
-var now = new Date();
-  function createtime(){
-	var start = new Date("2021/11/29 00:00:00");
-    now.setTime(now.getTime()+250);
-    days = (now - start) / 1000 / 60 / 60 / 24;
-    dnum = Math.floor(days);
-    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);
-    hnum = Math.floor(hours);
-    if(String(hnum).length == 1 ){
-      hnum = "0" + hnum;
-    }
-    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-    mnum = Math.floor(minutes);
-    if(String(mnum).length == 1 ){
-      mnum = "0" + mnum;
-    }
-    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-    snum = Math.round(seconds);
-    if(String(snum).length == 1 ){
-      snum = "0" + snum;
-    }
-   document.getElementById("timeDate").innerHTML ="小破站已各种夹缝中安全运行" +dnum+" 天 "; 
-   document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-  }
-
-   setInterval("createtime()",250);
-</script>
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
 </div>
 
-</footer>
-
-
-  <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":"flase","trickleSpeed":100})
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -588,15 +595,44 @@ var now = new Date();
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
-  <script  src="/js/local-search.js" ></script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -606,61 +642,24 @@ var now = new Date();
 
 
 
-  
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
 
 
-
-  <script defer src="/js/leancloud.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
-<!--浏览器搞笑标题-->
-<script type="text/javascript" src="/js/FunnyTitle.js"></script>
 
+  
 
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <script src="/live2dw/lib/L2Dwidget.min.js?ed381d099240bc63b900aaffbb76d73b"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":300,"height":350},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
