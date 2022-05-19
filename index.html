@@ -13,10 +13,10 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta property="og:type" content="website">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="zzh的后花园">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="zzh的后花园">
@@ -24,26 +24,37 @@
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
+  
+  
     - <link rel="stylesheet" href="/css/mouse.css">
   
   <title>zzh的后花园</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/scrollbar.css">
@@ -54,16 +65,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":"flase","trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"OwmXMu5ulbL9tc2LDoOSm88V-gzGzoHsz","app_key":"bqWoRfDVxvyAH6VGIr9jdKOR","server_url":"","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"OwmXMu5ulbL9tc2LDoOSm88V-gzGzoHsz","app_key":"bqWoRfDVxvyAH6VGIr9jdKOR","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
+
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>zzh的后花园</strong>
@@ -157,6 +181,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -169,34 +194,40 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://rmt.dogedoge.com/fetch/fluid/storage/bg/dojm2h.png?w=1920&q=100&fmt=webp') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Welcome to Zhang Zhi hao&#39;s blog.">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://rmt.dogedoge.com/fetch/fluid/storage/bg/dojm2h.png?w=1920&q=100&fmt=webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="花有重开日，人无再少年。"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
@@ -215,23 +246,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/05/17/Android%E5%AE%9E%E9%AA%8C3-2/" target="_self">
+      <a class="index-excerpt" href="/2022/05/17/Android%E5%AE%9E%E9%AA%8C3-2/" target="_self">
+        <div>
           
-          
-            
-          
-          实验内容
-使用 Intent 启动 Activity 的方法
-获取 Activity 返回值的方法
-发送和接收广播消息的方法实验目的和要求
-了解使用 Intent 进行组件通信的原理
-掌握使用 Intent 启动 Activity 的两种方式
-掌握获取 Activity 返回值的方法
-了解 Intent 过滤器的原理与匹配机制
-掌握发送和接收广播消息的方法实验步骤：1、创建lab3_2工程。2、在
-        </a>
-      </p>
+          实验内容 使用 Intent 启动 Activity 的方法 获取 Activity 返回值的方法 发送和接收广播消息的方法实验目的和要求 了解使用 Intent 进行组件通信的原理 掌握使用 Intent 启动 Activity 的两种方式 掌握获取 Activity 返回值的方法 了解 Intent 过滤器的原理与匹配机制 掌握发送和接收广播消息的方法实验步骤：1、创建lab3_2工程。2、在
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -243,18 +263,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Android/">Android</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E9%AA%8C/">移动应用开发实验</a>
+              <a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E9%AA%8C/">#移动应用开发实验</a>
             
           </div>
         
@@ -273,25 +307,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/04/27/android-lab3-1/" target="_self">
+      <a class="index-excerpt" href="/2022/04/27/android-lab3-1/" target="_self">
+        <div>
           
-          
-            
-          
-          实验内容
-使用 Intent 启动 Activity 的方法
-获取 Activity 返回值的方法
-发送和接收广播消息的方法实验目的和要求
-了解使用 Intent 进行组件通信的原理
-掌握使用 Intent 启动 Activity 的两种方式
-掌握获取 Activity 返回值的方法
-了解 Intent 过滤器的原理与匹配机制
-掌握发送和接收广播消息的方法实验步骤
-
-3.1 实现如下的程序功能1、
-        </a>
-      </p>
+          实验内容 使用 Intent 启动 Activity 的方法 获取 Activity 返回值的方法 发送和接收广播消息的方法实验目的和要求 了解使用 Intent 进行组件通信的原理 掌握使用 Intent 启动 Activity 的两种方式 掌握获取 Activity 返回值的方法 了解 Intent 过滤器的原理与匹配机制 掌握发送和接收广播消息的方法实验步骤  3.1 实现如下的程序功能1、
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -303,18 +324,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Android/">Android</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E9%AA%8C/">移动应用开发实验</a>
+              <a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E9%AA%8C/">#移动应用开发实验</a>
             
           </div>
         
@@ -333,16 +368,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/04/21/Android%E5%AE%9E%E9%AA%8C2-2/" target="_self">
+      <a class="index-excerpt" href="/2022/04/21/Android%E5%AE%9E%E9%AA%8C2-2/" target="_self">
+        <div>
           
-          
-            
-          
-          2.2 实现如下的程序功能(4 学时)内容：1、使用 ListView 实现如下程序界面和功能，如图 4 所示。2、当选择某一 ListView 子项，TextView（即 MenuDemo 位置）中会显示所选子项内容，如图 5 所示。3、采用自定义布局 BaseAdapter 修改列表颜色，如图 6 所示。
-实验步骤：1、    先建立一个空工程，在activity_main.xml文件中写入T
-        </a>
-      </p>
+          2.2 实现如下的程序功能(4 学时)内容：1、使用 ListView 实现如下程序界面和功能，如图 4 所示。2、当选择某一 ListView 子项，TextView（即 MenuDemo 位置）中会显示所选子项内容，如图 5 所示。3、采用自定义布局 BaseAdapter 修改列表颜色，如图 6 所示。 实验步骤：1、    先建立一个空工程，在activity_main.xml文件中写入T
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -354,18 +385,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Android/">Android</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E9%AA%8C/">移动应用开发实验</a>
+              <a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E9%AA%8C/">#移动应用开发实验</a>
             
           </div>
         
@@ -384,16 +429,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/04/21/Android%E5%AE%9E%E9%AA%8C1/" target="_self">
+      <a class="index-excerpt" href="/2022/04/21/Android%E5%AE%9E%E9%AA%8C1/" target="_self">
+        <div>
           
-          
-            
-          
-          实验 2 Android 用户界面2.1 实现如下的程序功能(2 学时)要求：1、基于线性布局与相对布局，分别实现图 1 所示的用户界面。2、点击“提交”按钮，对用户输入进行检查，“姓名”为必填项，未填姓名会显示提示信息。3、点击“提交”按钮，若姓名输入不为空，将显示用户输入的姓名、性别、专业、兴趣爱好信息，显示方式采用 Toast 显示。如图 3 所示。
-activity_main.xml文件1
-        </a>
-      </p>
+          实验 2 Android 用户界面2.1 实现如下的程序功能(2 学时)要求：1、基于线性布局与相对布局，分别实现图 1 所示的用户界面。2、点击“提交”按钮，对用户输入进行检查，“姓名”为必填项，未填姓名会显示提示信息。3、点击“提交”按钮，若姓名输入不为空，将显示用户输入的姓名、性别、专业、兴趣爱好信息，显示方式采用 Toast 显示。如图 3 所示。 activity_main.xml文件1
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -405,18 +446,32 @@ activity_main.xml文件1
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Android/">Android</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Android-%E5%BC%80%E5%8F%91/">Android 开发</a>
+              <a href="/tags/Android-%E5%BC%80%E5%8F%91/">#Android 开发</a>
             
           </div>
         
@@ -435,16 +490,12 @@ activity_main.xml文件1
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/03/06/%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9BB%E7%BB%84/" target="_self">
+      <a class="index-excerpt" href="/2022/03/06/%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9BB%E7%BB%84/" target="_self">
+        <div>
           
-          
-            
-          
-          时间显示【第十二届】【省赛】【B组】问题描述 小蓝要和朋友合作开发一个时间的网站。在服务器上，朋友已经获取了当前的时间，用一个整数表示，值从1970年1月1日00：00：00到当前时刻经过的毫秒数。现在，给小蓝要在客户端显示出这个时间，小蓝不用显示出年月日，只需要显示出时分秒即可，毫秒也不用显示，直接舍去即可。给定一个用整数表示的时间，请将这个时间对应的时分秒输出。
-输入格式输入一行包含一个整数，
-        </a>
-      </p>
+          时间显示【第十二届】【省赛】【B组】问题描述 小蓝要和朋友合作开发一个时间的网站。在服务器上，朋友已经获取了当前的时间，用一个整数表示，值从1970年1月1日00：00：00到当前时刻经过的毫秒数。现在，给小蓝要在客户端显示出这个时间，小蓝不用显示出年月日，只需要显示出时分秒即可，毫秒也不用显示，直接舍去即可。给定一个用整数表示的时间，请将这个时间对应的时分秒输出。 输入格式输入一行包含一个整数，
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -456,18 +507,32 @@ activity_main.xml文件1
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/">蓝桥杯</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="category-chain-item">蓝桥杯</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AFjava%E7%BB%84/">蓝桥杯java组</a>
+              <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AFjava%E7%BB%84/">#蓝桥杯java组</a>
             
           </div>
         
@@ -486,17 +551,12 @@ activity_main.xml文件1
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/02/28/%E4%BC%AA%E5%8A%A0%E5%AF%86/" target="_self">
+      <a class="index-excerpt" href="/2022/02/28/%E4%BC%AA%E5%8A%A0%E5%AF%86/" target="_self">
+        <div>
           
-          
-            
-          
-          伪加密原理zip伪加密是在文件头的加密标志位做修改，进而再打开文件时识被别为加密压缩包。
-背景一个 ZIP 文件由三个部分组成：压缩源文件数据区+压缩源文件目录区+压缩源文件目录结束标志。
-压缩源文件数据区：50 4B 03 04：这是头文件标记（0x04034b50）14 00：解压文件所需 pkware 版本00 00：全局方式位标记（有无加密）08 00：压缩方式5A 7E：最后修改文件时间
-        </a>
-      </p>
+          伪加密原理zip伪加密是在文件头的加密标志位做修改，进而再打开文件时识被别为加密压缩包。 背景一个 ZIP 文件由三个部分组成：压缩源文件数据区+压缩源文件目录区+压缩源文件目录结束标志。 压缩源文件数据区：50 4B 03 04：这是头文件标记（0x04034b50）14 00：解压文件所需 pkware 版本00 00：全局方式位标记（有无加密）08 00：压缩方式5A 7E：最后修改文件时间
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -508,18 +568,32 @@ activity_main.xml文件1
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CTF-Misc/">CTF-Misc</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CTF-Misc/" class="category-chain-item">CTF-Misc</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/">知识点</a>
+              <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/">#知识点</a>
             
           </div>
         
@@ -538,17 +612,12 @@ activity_main.xml文件1
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/02/27/BUUCTF%E7%BB%83%E4%B9%A0/" target="_self">
+      <a class="index-excerpt" href="/2022/02/27/BUUCTF%E7%BB%83%E4%B9%A0/" target="_self">
+        <div>
           
-          
-            
-          
-          金三胖题解：看到动图，想到stegsolve，用Frame Browser逐帖分析，得到flag。
-1flag&#123;he11o hongke&#125;
-二维码题解：用二维码解码器解码得到 secret is here，提交上去，发现flag错误，看来这不是flag，根据流程，先参看图片属性，并没有什么内容，再用010edit，也没有什么信息，用stegsolve，也没发现，最后用VMwar
-        </a>
-      </p>
+          金三胖题解：看到动图，想到stegsolve，用Frame Browser逐帖分析，得到flag。 1flag&amp;#123;he11o hongke&amp;#125; 二维码题解：用二维码解码器解码得到 secret is here，提交上去，发现flag错误，看来这不是flag，根据流程，先参看图片属性，并没有什么内容，再用010edit，也没有什么信息，用stegsolve，也没发现，最后用VMwar
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -560,18 +629,32 @@ activity_main.xml文件1
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CTF-Misc/">CTF-Misc</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CTF-Misc/" class="category-chain-item">CTF-Misc</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/BUUCTF/">BUUCTF</a>
+              <a href="/tags/BUUCTF/">#BUUCTF</a>
             
           </div>
         
@@ -590,19 +673,12 @@ activity_main.xml文件1
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/01/25/%E8%93%9D%E6%A1%A5%E6%9D%AF/" target="_self">
+      <a class="index-excerpt" href="/2022/01/25/%E8%93%9D%E6%A1%A5%E6%9D%AF/" target="_self">
+        <div>
           
-          
-            
-          
-          A+B问题问题描述 输入A、B，输出A+B。
-输入格式输入的第一行包括两个整数，由空格分隔，分别表示A、B。
-输出格式输出一行，包括一个整数，表示A+B的值。
-题解  无
-12345678910import java.util.*;public class Main&#123;	public static void main(String []args)	&#123;Scanner sc=new 
-        </a>
-      </p>
+          A+B问题问题描述 输入A、B，输出A+B。 输入格式输入的第一行包括两个整数，由空格分隔，分别表示A、B。 输出格式输出一行，包括一个整数，表示A+B的值。 题解  无 12345678910import java.util.*;public class Main&amp;#123;	public static void main(String []args)	&amp;#123;Scanner sc&#x3D;new
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -614,18 +690,32 @@ activity_main.xml文件1
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/">蓝桥杯</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="category-chain-item">蓝桥杯</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AFjava%E7%BB%84/">蓝桥杯java组</a>
+              <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AFjava%E7%BB%84/">#蓝桥杯java组</a>
             
           </div>
         
@@ -644,15 +734,12 @@ activity_main.xml文件1
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/12/06/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0%E6%9D%91/" target="_self">
-          
-          
-            
+      <a class="index-excerpt" href="/2021/12/06/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0%E6%9D%91/" target="_self">
+        <div>
           
           如来十三掌1234567891011121314下载文件得到夜哆悉諳多苦奢陀奢諦冥神哆盧穆皤三侄三即諸諳即冥迦冥隸數顛耶迦奢若吉怯陀諳怖奢智侄諸若奢數菩奢集遠俱老竟寫明奢若梵等盧皤豆蒙密離怯婆皤礙他哆提哆多缽以南哆心曰姪罰蒙呐神。舍切真怯勝呐得俱沙罰娑是怯遠得呐數罰輸哆遠薩得槃漫夢盧皤亦醯呐娑皤瑟輸諳尼摩罰薩冥大倒參夢侄阿心罰等奢大度地冥殿皤沙蘇輸奢恐豆侄得罰提哆伽諳沙楞缽三死怯摩大蘇者數一遮前面
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -664,18 +751,32 @@ activity_main.xml文件1
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CTF-Misc/">CTF-Misc</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CTF-Misc/" class="category-chain-item">CTF-Misc</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+              <a href="/tags/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">#攻防世界</a>
             
           </div>
         
@@ -694,20 +795,12 @@ activity_main.xml文件1
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/12/05/%E9%AB%98%E6%B8%85%E5%A3%81%E7%BA%B8%E7%BD%91%E7%AB%99/" target="_self">
+      <a class="index-excerpt" href="/2021/12/05/%E9%AB%98%E6%B8%85%E5%A3%81%E7%BA%B8%E7%BD%91%E7%AB%99/" target="_self">
+        <div>
           
-          
-            
-          
-          高清壁纸网站
-1: https://wallpaperhub.app/
-2: https://wallhaven.cc/
-3: https://unsplash.com/
-
-
-        </a>
-      </p>
+          高清壁纸网站 1: https:&#x2F;&#x2F;wallpaperhub.app&#x2F; 2: https:&#x2F;&#x2F;wallhaven.cc&#x2F; 3: https:&#x2F;&#x2F;unsplash.com&#x2F;
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -723,7 +816,7 @@ activity_main.xml文件1
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/">杂七杂八</a>
+              <a href="/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/">#杂七杂八</a>
             
           </div>
         
@@ -768,99 +861,65 @@ activity_main.xml文件1
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- LeanCloud 统计PV -->
-        <span id="leancloud-site-pv-container" style="display: none">
-            总访问量 
-            <span id="leancloud-site-pv"></span>
-             次
-          </span>
-      
-      
-        <!-- LeanCloud 统计UV -->
-        <span id="leancloud-site-uv-container" style="display: none">
-            总访客数 
-            <span id="leancloud-site-uv"></span>
-             人
-          </span>
-      
-
-    
-  </div>
-
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
   
 
   
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
 
- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
- <div>
-<span id="timeDate">载入天数...</span>
-<span id="times">载入时分秒...</span>
-<script>
-var now = new Date();
-  function createtime(){
-	var start = new Date("2021/11/29 00:00:00");
-    now.setTime(now.getTime()+250);
-    days = (now - start) / 1000 / 60 / 60 / 24;
-    dnum = Math.floor(days);
-    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);
-    hnum = Math.floor(hours);
-    if(String(hnum).length == 1 ){
-      hnum = "0" + hnum;
-    }
-    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-    mnum = Math.floor(minutes);
-    if(String(mnum).length == 1 ){
-      mnum = "0" + mnum;
-    }
-    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-    snum = Math.round(seconds);
-    if(String(snum).length == 1 ){
-      snum = "0" + snum;
-    }
-   document.getElementById("timeDate").innerHTML ="小破站已各种夹缝中安全运行" +dnum+" 天 "; 
-   document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-  }
-
-   setInterval("createtime()",250);
-</script>
+  
 </div>
 
-</footer>
-
-
-  <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":"flase","trickleSpeed":100})
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -868,15 +927,46 @@ var now = new Date();
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
-  <script  src="/js/local-search.js" ></script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
 
 
 
@@ -886,61 +976,24 @@ var now = new Date();
 
 
 
-  
 
-
-
-
-
+  <script  src="/js/local-search.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
 
 
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
-<!--浏览器搞笑标题-->
-<script type="text/javascript" src="/js/FunnyTitle.js"></script>
 
+  
 
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <script src="/live2dw/lib/L2Dwidget.min.js?ed381d099240bc63b900aaffbb76d73b"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":300,"height":350},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
